@@ -25,13 +25,15 @@ class Instructor::LessonsController < ApplicationController
     end
   end
 
-   def current_lesson
+  def current_lesson
     @current_lesson ||= Lesson.find(params[:id])
   end
 
   def require_authorized_for_current_section
     if current_section.course.user != current_user
       render plain: 'Unauthorized', status: :unauthorized
+    end
+  end
 
   helper_method :current_section
   def current_section
