@@ -17,14 +17,13 @@
     update: function( event, ui ) {
       $.ajax({
         type: 'PUT',
-        url: ui.item.date('update-url'),
+        url: ui.item.data('update-url'),
         dataType: 'json',
         date: { section: { row_order_position: ui.item.index() } }
-
-      })
+      });
     }
-  })
-  })
+  });
+  });
 </script>
 
 <br />
